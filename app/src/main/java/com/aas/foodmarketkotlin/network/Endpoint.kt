@@ -1,6 +1,5 @@
 package com.aas.foodmarketkotlin.network
 
-import com.aas.foodmarketkotlin.model.response.Wrapper
 import com.aas.foodmarketkotlin.model.response.login.LoginResponse
 import io.reactivex.Observable
 import retrofit2.http.Field
