@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Food Market Kotlin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_home">Home</string>
+    <string name="title_order">Order</string>
+    <string name="title_profile">Profile</string>
+    <string name="icon_oke_profile">icon oke profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tab_layout_description">Deskripsi aksesibilitas untuk Tab Layout</string>
+</resources>
