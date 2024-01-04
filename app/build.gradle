@@ -40,8 +40,8 @@ android {
 
     productFlavors {
         dev {
-            applicationId = "com.aas.foodmarketkotlin.sandbox"
-            buildConfigField "String", "BASE_URL", "\"http://foodmarket-backend.buildwithangga.id/\""
+            applicationId = "com.aas.foodmarketkotlin.dev"
+            buildConfigField "String", "BASE_URL", "\"https://05d3-118-99-72-112.ngrok-free.app/\""
         }
     }
 }
@@ -73,7 +73,6 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.preference:preference-ktx:1.1.1'
     implementation ("com.github.dhaval2404:imagepicker:2.1")
-
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
