@@ -1,4 +1,4 @@
-package com.aas.foodmarketkotlin.model.response.transaction
+package com.aas.foodmarketkotlin.model.response.home
 
 
 import android.os.Parcelable
@@ -7,38 +7,38 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Food(
+data class Data(
     @Expose
     @SerializedName("created_at")
-    val createdAt: Long,
+    val createdAt: String?,
     @Expose
     @SerializedName("deleted_at")
     val deletedAt: String?,
     @Expose
     @SerializedName("description")
-    val description: String,
+    val description: String?,
     @Expose
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @Expose
     @SerializedName("ingredients")
-    val ingredients: String,
+    val ingredients: String?,
     @Expose
     @SerializedName("name")
-    val name: String,
+    val name: String?,
     @Expose
     @SerializedName("picturePath")
-    val picturePath: String,
+    val picturePath: String?,
     @Expose
     @SerializedName("price")
-    val price: Int,
+    val price: Int?,
     @Expose
     @SerializedName("rate")
-    val rate: Int,
+    val rate: Int?,
     @Expose
     @SerializedName("types")
-    val types: String,
+    val types: String?,
     @Expose
     @SerializedName("updated_at")
-    val updatedAt: Long
+    val updatedAt: String?
 ) : Parcelable

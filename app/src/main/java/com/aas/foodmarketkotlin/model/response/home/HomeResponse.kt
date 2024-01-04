@@ -1,10 +1,10 @@
-package com.aas.foodmarketkotlin.model.response.transaction
+package com.aas.foodmarketkotlin.model.response.home
 
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class TransactionResponse(
+data class HomeResponse(
     @Expose
     @SerializedName("current_page")
     val currentPage: Int,
@@ -28,7 +28,7 @@ data class TransactionResponse(
     val links: List<Link>,
     @Expose
     @SerializedName("next_page_url")
-    val nextPageUrl: String,
+    val nextPageUrl: Any,
     @Expose
     @SerializedName("path")
     val path: String,

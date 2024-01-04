@@ -12,17 +12,20 @@ import com.aas.foodmarketkotlin.ui.MainActivity
 
 class SignupSuccessFragment : Fragment() {
 
-    private lateinit var btnFind: Button
+    private lateinit var btnFind: Button // Pastikan Anda telah mengimpor Button dari library Android.
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_signup_success, container, false)
     }
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btnFind = view.findViewById(R.id.btnFind)
 
         btnFind.setOnClickListener {
             val home = Intent(activity, MainActivity::class.java)
@@ -30,6 +33,4 @@ class SignupSuccessFragment : Fragment() {
             activity?.finishAffinity()
         }
     }
-
-
 }

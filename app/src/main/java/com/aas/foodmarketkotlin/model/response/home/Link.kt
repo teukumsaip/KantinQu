@@ -1,4 +1,4 @@
-package com.aas.foodmarketkotlin.model.response.transaction
+package com.aas.foodmarketkotlin.model.response.home
 
 
 import com.google.gson.annotations.Expose
