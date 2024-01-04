@@ -9,10 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aas.foodmarketkotlin.R
 import com.aas.foodmarketkotlin.model.dummy.HomeVerticalModel
+import com.aas.foodmarketkotlin.model.response.home.Data
 import com.aas.foodmarketkotlin.utils.Helpers.formatPrice
+import com.bumptech.glide.Glide
 
 class HomeNewTasteAdapter(
-    private val listData: ArrayList<HomeVerticalModel>,
+    private val listData: ArrayList<Data>,
     private val itemAdapterCallback: ItemAdapterCallback,
 ) : RecyclerView.Adapter<HomeNewTasteAdapter.ViewHolder>(){
 
@@ -37,15 +39,15 @@ class HomeNewTasteAdapter(
         private val ivPoster: ImageView = itemView.findViewById(R.id.ivPoster)
         private val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
 
-        fun bind(data: HomeVerticalModel, itemAdapterCallback: ItemAdapterCallback) {
+        fun bind(data: Data, itemAdapterCallback: ItemAdapterCallback) {
             itemView.apply {
-                tvTitle.text = data.title
-                tvPrice.formatPrice(data.price)
-                rbFood.rating = data.rating
+                tvTitle.text = data.name
+                tvPrice.formatPrice(data.price.toString())
+                rbFood.rating = data.rate?.toFloat() ?: 0f
 
-//                Glide.with(context)
-//                    .load(data.src)
-//                    .into(ivPoster)
+                Glide.with(context)
+                    .load(data.picturePath)
+                    .into(ivPoster)
 
                 itemView.setOnClickListener {
                     itemAdapterCallback.onClick(it, data)
@@ -55,7 +57,7 @@ class HomeNewTasteAdapter(
     }
 
     interface ItemAdapterCallback {
-        fun onClick(v: View, data: HomeVerticalModel)
+        fun onClick(v: View, data: Data)
     }
 
 }

@@ -9,9 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aas.foodmarketkotlin.R
 import com.aas.foodmarketkotlin.model.dummy.HomeModel
+import com.aas.foodmarketkotlin.model.response.home.Data
+import com.bumptech.glide.Glide
 
 class HomeAdapter (
-    private val listData: List<HomeModel>,
+    private val listData: List<Data>,
     private val itemAdapterCallback: ItemAdapterCallback,
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>(){
 
@@ -35,14 +37,14 @@ class HomeAdapter (
         private val rbFood: RatingBar = itemView.findViewById(R.id.rbFood)
         private val ivPoster: ImageView = itemView.findViewById(R.id.ivPoster)
 
-        fun bind(data: HomeModel, itemAdapterCallback: ItemAdapterCallback) {
+        fun bind(data: Data, itemAdapterCallback: ItemAdapterCallback) {
             itemView.apply {
-                tvTitle.text = data.title
-                rbFood.rating = data.rating
+                tvTitle.text = data.name
+                rbFood.rating = data.rate?.toFloat() ?:0f
 
-//                Glide.with(context)
-  //                  .load(data.src)
-    //                .into(ivPoster)
+                Glide.with(context)
+                    .load(data.picturePath)
+                    .into(ivPoster)
 
                 itemView.setOnClickListener {
                     itemAdapterCallback.onClick(it, data)
@@ -52,7 +54,7 @@ class HomeAdapter (
     }
 
     interface ItemAdapterCallback {
-        fun onClick(v: View, data: HomeModel)
+        fun onClick(v: View, data: Data)
     }
 
 }

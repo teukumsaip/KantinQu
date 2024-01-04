@@ -10,16 +10,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aas.foodmarketkotlin.R
 import com.aas.foodmarketkotlin.model.dummy.HomeVerticalModel
+import com.aas.foodmarketkotlin.model.response.home.Data
 import com.aas.foodmarketkotlin.ui.detail.DetailActivity
 import com.aas.foodmarketkotlin.ui.home.newtaste.HomeNewTasteAdapter
 
-class HomePopularFragment : Fragment(), HomeNewTasteAdapter.ItemAdapterCallback{
+class HomePopularFragment : Fragment(), HomeNewTasteAdapter.ItemAdapterCallback {
 
-    private  var foodList : ArrayList<HomeVerticalModel> = ArrayList()
+    private var popularList: ArrayList<Data>? = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home_new_taste, container, false)
@@ -28,24 +29,19 @@ class HomePopularFragment : Fragment(), HomeNewTasteAdapter.ItemAdapterCallback{
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        popularList = arguments?.getParcelableArrayList("data")
         val rcList: RecyclerView = view?.findViewById(R.id.rcList) ?: return
 
-        initDataDummy()
-        var adapter = HomeNewTasteAdapter(foodList, this)
+        var adapter = HomeNewTasteAdapter(popularList!!, this)
         var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
         rcList.layoutManager = layoutManager
         rcList.adapter = adapter
     }
 
-    fun initDataDummy() {
-        foodList = ArrayList()
-        foodList.add(HomeVerticalModel("Cherry Healthy", "10000",5f))
-        foodList.add(HomeVerticalModel("Burger Tamayo", "10000",4f))
-        foodList.add(HomeVerticalModel("Bakwan Cihuy", "10000",4.5f))
-    }
 
-    override fun onClick(v: View, data: HomeVerticalModel) {
-        val detail = Intent(activity, DetailActivity::class.java)
+    override fun onClick(v: View, data: Data) {
+        val detail = Intent(activity, DetailActivity::class.java).putExtra("data", data)
         startActivity(detail)
     }
+
 }

@@ -1,9 +1,11 @@
 package com.aas.foodmarketkotlin.ui.detail
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.Navigation
 import com.aas.foodmarketkotlin.R
 
 class DetailActivity : AppCompatActivity() {
@@ -13,6 +15,13 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+
+        intent.extras?.let {
+            val navController = Navigation.findNavController(findViewById(R.id.detailHostFragment))
+            val bundle = Bundle()
+            bundle.putParcelable("data", it.get("data") as Parcelable?)
+            navController.setGraph(navController.graph, bundle)
+        }
 
         toolbar = findViewById(R.id.toolbar)
 
