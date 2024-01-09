@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.aas.kantinqu.ui.home.HomeFragment"
+        android:name="com.pam.kantinqu.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_order"
-        android:name="com.aas.kantinqu.ui.order.OrderFragment"
+        android:name="com.pam.kantinqu.ui.order.OrderFragment"
         android:label="@string/title_order"
         tools:layout="@layout/fragment_order" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.aas.kantinqu.ui.profile.ProfileFragment"
-        android:label="@string/title_profile"
+        android:name="com.pam.kantinqu.ui.profile.ProfileFragment"
+        android:label="@string/title_notifications"
         tools:layout="@layout/fragment_profile" />
 </navigation>
