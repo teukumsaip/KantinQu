@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aas.foodmarketkotlin">
+    package="com.aas.kantinqu">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -9,17 +9,17 @@
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name=".FoodMarket"
+        android:name="com.aas.kantinqu.FoodMarket"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar">
-        <activity android:name=".ui.detail.DetailActivity" />
-        <activity android:name=".ui.MainActivity" />
-        <activity android:name=".ui.auth.AuthActivity" />
-        <activity android:name=".ui.splashscreen.SplashScreenActivity"
+        <activity android:name="com.aas.kantinqu.ui.detail.DetailActivity" />
+        <activity android:name="com.aas.kantinqu.ui.MainActivity" />
+        <activity android:name="com.aas.kantinqu.ui.auth.AuthActivity" />
+        <activity android:name="com.aas.kantinqu.ui.splashscreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

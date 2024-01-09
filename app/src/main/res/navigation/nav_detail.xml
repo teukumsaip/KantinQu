@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentDetail"
-        android:name="com.aas.foodmarketkotlin.ui.detail.DetailFragment"
+        android:name="com.aas.kantinqu.ui.detail.DetailFragment"
         tools:layout="@layout/fragment_detail">
 
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentPayment"
-        android:name="com.aas.foodmarketkotlin.ui.detail.PaymentFragment"
+        android:name="com.aas.kantinqu.ui.detail.PaymentFragment"
         tools:layout="@layout/fragment_payment">
 
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentPaymentSuccess"
-        android:name="com.aas.foodmarketkotlin.ui.detail.PaymentSuccessFragment"
+        android:name="com.aas.kantinqu.ui.detail.PaymentSuccessFragment"
         tools:layout="@layout/fragment_payment_success">
 
     </fragment>
